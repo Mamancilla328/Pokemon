@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap");
+
+.Search {
+  color: #ffa0a0;
+  background-color: #ffe3e3;
+  border: none;
+  border-radius: 9999px;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  padding-left: 15px;
+  width: 250px;
+}
+.Search:hover {
+  background-color:white;
+  color: #ffa0a0;
+}
+
+.Search::placeholder{
+  color: #ffa0a0
+}
+
+
+.lupa {
+  display: flex;
+  align-items: center;
+  border: solid 2px transparent;
+  border-radius: 9999px;
+  background-color: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #ffa0a0;
+  right: 0rem;
+  outline: none !important;
+}
+
+.lupa:hover {
+  color: #ffe3e3;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+}

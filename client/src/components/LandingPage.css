@@ -1,0 +1,37 @@
+.landing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('../BosquePokemon.jpg');
+  background-size: cover;
+}
+
+.photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  border: solid 2px transparent;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+
+  outline: none !important;
+  animation-duration: 1.5s;
+  animation-name: logo;
+  animation-iteration-count: infinite;
+}
+
+.photo:hover {
+  color: #ffe3e3;
+}
+
+@keyframes logo {
+  50% {
+    width: 12rem;
+    height: 12rem;
+  
+  }
+}
