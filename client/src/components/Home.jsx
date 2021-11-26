@@ -40,8 +40,8 @@ const Home = () => {
   return (
     <div className="container">
       <div className="buttsBox">
-        {currentPosts.map(({ id, hp, name, types }) => (
-          <Card key={id} image={hp} name={name} id={id} types={types} />
+        {currentPosts.map(({ id, sprite, name, types }) => (
+          <Card key={id} image={sprite} name={name} id={id} types={types} />
         ))}
       </div>
 
