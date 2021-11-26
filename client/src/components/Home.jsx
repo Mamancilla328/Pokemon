@@ -8,7 +8,7 @@ import { Pagination } from "./Pagination";
 const Home = () => {
   const dispatch = useDispatch();
   const pokemons = useSelector((state) => state.pokemons);
-  const pokemsFilter = useSelector((state) => state.pokemonsFilter);
+  const pokemonsFilter = useSelector((state) => state.pokemonsFilter);
   const filterBy = useSelector((state) => state.filterBy);
   const orderBy = useSelector((state) => state.orderBy);
 
@@ -28,10 +28,10 @@ const Home = () => {
     if (filterBy === "All" && orderBy === "All") {
       setPosts(pokemons);
     } else {
-      setPosts(pokemsFilter);
+      setPosts(pokemonsFilter);
     }
     setCurrentPage(1);
-  }, [pokemons, pokemsFilter, filterBy, orderBy]);
+  }, [pokemons, pokemonsFilter, filterBy, orderBy]);
 
   function paginate(pageNumber) {
     setCurrentPage(pageNumber);
@@ -41,7 +41,7 @@ const Home = () => {
     <div className="container">
       <div className="buttsBox">
         {currentPosts.map(({ id, sprite, name, types }) => (
-          <Card key={id} image={sprite} name={name} id={id} types={types} />
+          <Card key={id} sprite={sprite} name={name} id={id} types={types} />
         ))}
       </div>
 

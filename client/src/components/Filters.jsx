@@ -43,7 +43,7 @@ function Order() {
           <option value="A-Z">Order</option>
           <option value="A-Z">A-Z</option>
           <option value="Z-A">Z-A</option>
-          <option value="HighToLow">LowToHigh</option>
+          <option value="LowToHigh">LowToHigh</option>
           <option value="HighToLow">HighToLow</option>
         </select>
       </div>

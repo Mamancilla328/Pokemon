@@ -11,13 +11,11 @@ function App() {
   return (
    
     <div className="App">
-     
       <Route exact path="/" component={LandingPage} />
       <Route path="/home" component={NavBar} />
       <Route exact path="/home" component={Home} />
       <Route path="/Detail/:id" component={Detail} />
-      <Route path="/create" component={Form} />
-   
+      <Route path="/home/create" component={Form} />
     </div>
  
   );
