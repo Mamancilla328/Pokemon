@@ -8,7 +8,7 @@ import { IoMdArrowBack } from "react-icons/io";
 function Recipe(props) {
   const dispatch = useDispatch();
   const id = props.match.params.id;
-  const pokemon = useSelector((state) => state.pokemon);
+  const pokemon = useSelector((state) => state.pokemon[0]);
   const history = useHistory();
 
   const goToBack = () => {

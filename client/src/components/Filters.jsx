@@ -1,4 +1,4 @@
-import { OrderType, filterPokemonsByType, getTypes } from "../Redux/Actions.js";
+import { OrderType, filterPokemonsByType, getTypes, filterCreated } from "../Redux/Actions.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import "./Filters.css";
@@ -12,12 +12,17 @@ function Order() {
     dispatch(getTypes());
   }, []);
 
+  function handleChangeDB(event){
+    event.preventDefault();
+    dispatch(filterCreated(event.target.value))
+  }
+
   function handleChangeOrder(event) {
     event.preventDefault();
     dispatch(OrderType(event.target.value));
   }
 
-  function handleChangeDiets(event) {
+  function handleChangeTypes(event) {
     event.preventDefault();
     dispatch(filterPokemonsByType(event.target.value));
   }
@@ -27,7 +32,7 @@ function Order() {
       <div>
         <select
           className="filter"
-          onChange={(event) => handleChangeDiets(event)}
+          onChange={(event) => handleChangeTypes(event)}
         >
           <option value="All">Types</option>
           {allTypes.map(({name, id}) => (
@@ -45,6 +50,14 @@ function Order() {
           <option value="Z-A">Z-A</option>
           <option value="LowToHigh">LowToHigh</option>
           <option value="HighToLow">HighToLow</option>
+        </select>
+      </div>
+      <div>
+        <select className="filter" 
+        onChange={(event) => handleChangeDB(event)}
+        >
+          <option value="All">ALL</option>
+          <option value="DB">DB</option>
         </select>
       </div>
     </div>

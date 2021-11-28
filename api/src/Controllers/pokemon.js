@@ -27,16 +27,18 @@ const getPokemonsApi = async () => {
                         types: e.types.length < 2 ? [e.types[0].type.name] : [e.types[0].type.name, e.types[1].type.name]
                     })
                 })
+                // console.log (pokeData)
                 return pokeData;
             })
 
-    // console.log (getAllData)
+    
     return getAllData;
 
 };
 
 const getPokemonsDb = async () => {
-    return await Pokemon.findAll({
+    
+    const allPokemonDB = await Pokemon.findAll({
         include: {
             model: Type,
             attributes: ['name'],
@@ -45,6 +47,13 @@ const getPokemonsDb = async () => {
             }
         }
     })
+
+    // for (let i = 0; i < allPokemonDB.length; i++) {
+    //     allPokemonDB[i].types = allPokemonDB[i].types.map(e => e.name)  
+    // }
+    console.log(allPokemonDB[0])
+    return allPokemonDB
+
 };
 
 const getAllPokemons = async () => {
@@ -65,6 +74,7 @@ async function getPokemons (req, res, next) {
             const pokemon = await allPokemons.filter( e => 
                 e.name.toLowerCase().includes(name.toLowerCase())
                 );
+            // console.log(pokemon.map(e => e.types))
             pokemon.length>0
             ? res.status(200).send(pokemon)
             : res.status(404).send("Pokemon Not Found");
@@ -78,6 +88,7 @@ async function getPokemons (req, res, next) {
 
 async function addPokemon(req, res) {
     const {name, hp, attack, defense, speed, height, weight, sprite, createdInDb, types} = req.body;
+    console.log(types)
     try {
         if(name) {
             const createdPokemon = await Pokemon.create({

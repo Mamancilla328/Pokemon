@@ -157,7 +157,7 @@ export default function PokemonCreate() {
                     />
                 </p>
                 <div>
-                    <label>Types: </label>
+                    <label>Type: </label>
                     <select onChange={(e) => handleSelect(e)}>
                         {tipos.map((e) => (
                             <option value={e.name}>{e.name}</option>
@@ -170,12 +170,12 @@ export default function PokemonCreate() {
                     <Link className='return' to= '/home'><button className='return'>Return</button></Link>
                 </div>
             </form>
-            {input.types.map(e =>
+            {/* {input.types.map(e =>
                 <div className='divTypes'>
                     <p>{e}</p>
                     <button className='botonX' onClick={() => handleDelete(e)}>x</button>
                 </div>      
-            )}
+            )} */}
         </div>
     )
 }

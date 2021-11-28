@@ -49,12 +49,16 @@ export default function reducer(state = initialState, { type, payload }) {
           types: payload,
         };
       case FILTER_CREATED:
-        const Pokemons = state.pokemons
-        const createdFilter = payload === 'created' ? Pokemons.filter(e => e.createdInDb) : Pokemons.filter(e => !e.createdInDb)
-        return {
-            ...state,
-            pokemons: payload === 'all' ? state.pokemons : createdFilter
+        const poke = state.pokemons
+        const createdFilter = poke.filter(e => e.createdInDb) 
+        if (payload === "All") {
+          return { ...state, pokemonsFilter: state.pokemons, filterBy: payload };
+        }else if(payload === "DB"){
+          return {...state, pokemonsFilter: createdFilter, filterBy: payload}
         };
+
+        break
+
       case FILTER_BY_TYPE:
         if (payload === "All") {
           return { ...state, pokemonsFilter: state.pokemons, filterBy: payload };

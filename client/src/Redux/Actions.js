@@ -83,10 +83,9 @@ export function filterPokemonsByType(data) {
       };
 }
 
-export function filterCreated(payload) {
-    return {
-        type: 'FILTER_CREATED',
-        payload
+export function filterCreated(data) {
+    return(dispatch) => {
+        return dispatch({ type: FILTER_CREATED, payload: data })
     }
 }
 

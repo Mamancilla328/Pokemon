@@ -16,6 +16,8 @@ const Home = () => {
     dispatch(getPokemons({}));
   }, []);
 
+  console.log(pokemons)
+
   const [posts, setPosts] = useState(pokemons);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(9);
