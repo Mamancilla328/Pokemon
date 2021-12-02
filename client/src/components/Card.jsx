@@ -4,8 +4,6 @@ import { NavLink } from "react-router-dom";
 
 const Card = ({ sprite, name, id, types }) => {
   return (
- 
-
     <div className="card">
       <div className="shadow">
         <div className="img">

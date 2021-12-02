@@ -48,11 +48,17 @@ const getPokemonsDb = async () => {
         }
     })
 
+    const pokemonDB = allPokemonDB.map(pokemon => ({
+        ...pokemon.dataValues,
+        types: pokemon.dataValues.types.map(type => type.name)
+    }))
+        
     // for (let i = 0; i < allPokemonDB.length; i++) {
     //     allPokemonDB[i].types = allPokemonDB[i].types.map(e => e.name)  
     // }
-    console.log(allPokemonDB[0])
-    return allPokemonDB
+
+  //  console.log(pokemonDB)
+    return pokemonDB
 
 };
 

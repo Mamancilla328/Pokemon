@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { postPokemon, getTypes } from '../Redux/Actions';
 import { useDispatch, useSelector } from 'react-redux';
+import './Form.css'
 
 function validate(input) {
     let errors = {};
@@ -66,20 +67,20 @@ export default function PokemonCreate() {
         history.push('/home')
     }
 
-    function handleDelete(e) {
-        setInput({
-            ...input,
-            types: input.types.filter(el => el !== e)
-        })
-    }
+    // function handleDelete(e) {
+    //     setInput({
+    //         ...input,
+    //         types: input.types.filter(el => el !== e)
+    //     })
+    // }
 
     useEffect(() => {
         dispatch(getTypes());
     }, [dispatch]);
 
     return (
-        <div>
-            <h1>Create your pokemon</h1>
+        <div className='FormBox'>
+            <h1>-Create Your Pokemon-</h1>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <p>
                     <label>Name: </label>
@@ -165,9 +166,11 @@ export default function PokemonCreate() {
                     </select>
                     <ul>
                         <p>{input.types.map(e => e + ", ")}</p>
-                    </ul>        
-                    <button className='return' type='submit'>Create</button>
-                    <Link className='return' to= '/home'><button className='return'>Return</button></Link>
+                    </ul>
+                    <div>
+                    <button className='button' type='submit'>Create</button>
+                    </div>       
+                    {/* <Link className='return' to= '/home'><button className='return'>Return</button></Link> */}
                 </div>
             </form>
             {/* {input.types.map(e =>
