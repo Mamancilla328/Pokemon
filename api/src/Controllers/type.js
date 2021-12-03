@@ -4,12 +4,11 @@ const axios = require ('axios');
 
 
 async function getAllTypes (req, res) {
-  const apiUrl = await axios.get("https://pokeapi.co/api/v2/type");
-  const apiInfo = await apiUrl.data.results.map( e => e.name);
-
-  const types = apiInfo.flat();
+  const response = await axios.get("https://pokeapi.co/api/v2/type");
+  const types = await response.data.results.map( e => e.name);
+  const typesFlatten = types.flat();
   
-  types.forEach((e) => {
+  typesFlatten.forEach((e) => {
     Type.findOrCreate({
       where: {
         name: e,
@@ -18,11 +17,12 @@ async function getAllTypes (req, res) {
   });
 
   const allTypes = await Type.findAll();
-  if(allTypes.length){
-    res.status(200).send(allTypes);
-  }else{
-    res.status(404).send('Type Not Found')
+
+  if (allTypes.length) {
+    return res.status(200).send(allTypes);
   }
+
+  return res.status(404).send('Type Not Found')
 };
 
 

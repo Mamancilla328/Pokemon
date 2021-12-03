@@ -13,14 +13,35 @@ export function Pagination({ postsPerPage, totalPosts, paginate }) {
       <nav>
         <ul>
           {pageNumbers.map((number, id) => (
-            <button key={id} onClick={() => paginate(number)} className="paginate">
-              {number}
-            </button>
-          ))}
+          <div>
+            <button key={id} disabled={number -1 === 0} onClick={() => paginate(number -1)} className="paginate">atras</button>
+            <lebel className="paginate" >{number}</lebel>
+            <button disabled={number +1 === 0} onClick={() => paginate(number +1)}  className="paginate" >adelante</button>
+          </div>
+        ))} 
         </ul>
       </nav>
     </div>
   );
 }
 
+
+// import {getPokemons} from "../Redux/Actions.js";
+
+// const dispatch = useDispatch()
+// const {Pokemons} = useSelector(state=> state)
+// const [page,setPage] = useState(1)
+    
+// useEffect(()=>{
+//    dispatch(getPokemons({})) 
+// },[dispatch])
+
+// const changePage = (page)=>{
+//     dispatch(getPokemons({page}))
+//     setPage(page)
+// }
+
+/* <button disabled={page -1 === 0} onClick={()=> {changePage(page -1)}}>preview</button>
+<label>{page}</label>
+<button disabled={characters?.count <= (page * 5)} onClick={()=>{changePage(page +1)}}>next</button> */
 

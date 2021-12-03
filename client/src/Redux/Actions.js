@@ -7,6 +7,7 @@ export const GET_DETAILS = "GET_DETAILS";
 export const FILTER_BY_TYPE = "FILTER_BY_TYPE";
 export const FILTER_CREATED = "FILTER_CREATED";
 export const ORDER_TYPE = "ORDER_TYPE";
+export const SET_PAGE = "SET_PAGE"
 
 
 
@@ -93,4 +94,10 @@ export const OrderType = (data) => {
     return (dispatch) => {
       return dispatch({ type: ORDER_TYPE, payload: data });
     };
-  };
+};
+
+export const setPage = (page)=>{
+    return{
+        type: SET_PAGE, payload: page
+    }
+}

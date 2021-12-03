@@ -7,6 +7,7 @@ import {
     FILTER_BY_TYPE,
     FILTER_CREATED,
     ORDER_TYPE,
+    SET_PAGE
   } from "./Actions.js";
 
 const initialState = {
@@ -18,6 +19,7 @@ const initialState = {
     newPokemon: {},
     orderBy: "All",
     filterBy: "All",
+    page:1
 }
 
 export default function reducer(state = initialState, { type, payload }) {
@@ -47,6 +49,11 @@ export default function reducer(state = initialState, { type, payload }) {
         return {
           ...state,
           types: payload,
+        };
+      case SET_PAGE:
+        return{
+          ...state,
+          page: payload
         };
       case FILTER_CREATED:
         const poke = state.pokemons

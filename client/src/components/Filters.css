@@ -2,7 +2,9 @@
 
 .filter {
   border: none;
-  border-radius: 9999px;
+  margin-right: 5px;
+  border-radius: 999px;
+  align-content: center;
   font-family: "Poppins", sans-serif;
   color: #881414;
   outline: none;
