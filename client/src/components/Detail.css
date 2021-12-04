@@ -1,21 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap");
 
 .Boxcontainer {
-  background-color: #e98580;
+  background: linear-gradient(to bottom, white, red);
   opacity: 85%;
   padding: 15px;
   padding-bottom: 40px;
-  width: 100%;
+  /* width: 100%; */
   border: none;
-  border-radius: 5px;
-  justify-content: space-around;
+  border-radius: 9px 99px;
+ 
+}
+
+.detalle{
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction:row;
+  justify-content:space-evenly;
+  /* display: flex;
+  align-content: center;
+  flex-direction: column;
+  flex-wrap: wrap; */
+
+}
+
+.image{
+  display: flex;
+  align-content:center;
+  justify-content: center;
+
 }
 
 .CardDetails {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   font-family: "Poppins", sans-serif;
+  font-variant: small-caps;
+  font-size: 20px;
 }
 
 .btn {
@@ -24,11 +43,14 @@
   background-color: transparent;
   font-size: 3rem;
   cursor: pointer;
-  color: white;
+  color:rgb(235, 37, 37);
+  opacity: 85%;
   right: 0rem;
   outline: none !important;
+  box-shadow: 0 0 5px rgb(12, 8, 0, 0.3);
 }
 
 .btn:hover {
   color: #ffe3e3;
+  transform: scale(1.1);
 }

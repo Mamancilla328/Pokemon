@@ -6,7 +6,7 @@ const getPokemonsApi = async () => {
 
     // Url for each pokemon
     const urls = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon?offset=0&limit=50`
+        `https://pokeapi.co/api/v2/pokemon?offset=0&limit=150`
     ).then(({data: {results}}) => results.map(({ url }) => url));
 
     const pokemonPromise = urls.map(url => axios.get(url));

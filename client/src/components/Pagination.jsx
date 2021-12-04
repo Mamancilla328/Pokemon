@@ -1,5 +1,7 @@
 import "./Pagination.css";
 import React from "react";
+import { useState } from "react";
+
 
 export function Pagination({ postsPerPage, totalPosts, paginate }) {
   const pageNumbers = [];
@@ -10,19 +12,14 @@ export function Pagination({ postsPerPage, totalPosts, paginate }) {
 
   return (
     <div>
-      <nav>
-        <ul>
-          {pageNumbers.map((number, id) => (
-          <div>
-            <button key={id} disabled={number -1 === 0} onClick={() => paginate(number -1)} className="paginate">atras</button>
-            <lebel className="paginate" >{number}</lebel>
-            <button disabled={number +1 === 0} onClick={() => paginate(number +1)}  className="paginate" >adelante</button>
-          </div>
-        ))} 
-        </ul>
-      </nav>
+        { pageNumbers.length > 1 &&
+            pageNumbers.map(number => (
+                <button onClick={()=>paginate(number)} className='pagination'>{number}</button>
+            ))
+        }
     </div>
-  );
+)
+
 }
 
 

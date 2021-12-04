@@ -1,15 +1,17 @@
-.paginate{
+.pagination{
     border: solid 2px ;
-    border-radius: 9999px;
+    border-radius: 10px 900px;
+
+    justify-content: space-between;
     font-size: 1.5rem;
     bottom: 0.5rem;
     top: 0.5rem;
     background-color: whitesmoke;
     cursor: pointer;
-    color: #ffa0a0;
+    color: #e64e46;
     outline: none !important;
 }
 
-.paginate:hover {
-    color: #ffe3e3;
+.pagination:hover {
+    color: #f4c6c6;
   }

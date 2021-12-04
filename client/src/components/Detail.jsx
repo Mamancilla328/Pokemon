@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom'
 import { getDetail } from "../Redux/Actions.js";
-import { IoMdArrowBack } from "react-icons/io";
+import { IoIosHome } from "react-icons/io";
 
 function Recipe(props) {
   const dispatch = useDispatch();
@@ -27,16 +27,17 @@ function Recipe(props) {
   return (
     <div>
       <button onClick={goToBack} className="btn">
-        <IoMdArrowBack />
+      <IoIosHome />
       </button>
       <div className="Boxcontainer">
         <div className="CardDetails">
           <div>
             <h2>{pokemon.name}</h2>
           </div>
-          <div>
+          <div className= 'image'>
             <img src={pokemon.sprite} alt={pokemon.name} />
           </div>
+          <div className= 'detalle'>
           <label>
           <strong>ID:</strong>
           </label>
@@ -69,7 +70,8 @@ function Recipe(props) {
              <strong>Weight:</strong>
          </label>
          <div>{pokemon.weight}</div>
-
+      
+          </div>
         </div>
       </div>
     </div>
